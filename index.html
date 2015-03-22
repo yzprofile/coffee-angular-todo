@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="TodoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <script type="text/javascript" src="bower_components/coffeescript/extras/coffee-script.js"></script>
+    <script type="text/javascript" src="todos.js"></script>
+  </head>
+
+  <body ng-controller="TodoCtrl">
+
+    <div id="main">
+
+      <div id="title">
+        <h1>Todos</h1>
+      </div>
+
+      <div id="todo-input">
+        <input type="text" ng-keypress="createTodo($event)" ng-model="content">
+      </div>
+
+
+      <div id="todo-list">
+        <ul>
+          <li ng-repeat="todo in todos">
+            <div id="todo">
+              <div><input type="checkbox" ng-model="todo.done" ng-change="stateChange(todo)"></div>
+              <div><p ng-class="{strike: todo.done}">{{todo.content}}</p></div>
+              <button id="destroy" ng-click="removeTodo(todo)"></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </body>
+</html>

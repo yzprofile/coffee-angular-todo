@@ -1,0 +1,63 @@
+* {
+    margin: auto;
+    /* border: 1px dashed yellow; */
+}
+
+#main {
+    width: 30%;
+}
+
+#title {
+    color: blue;
+    text-align: center;
+}
+
+#todo-input {
+    width: 80%;
+}
+
+#todo-input input {
+    width: 100%;
+    font-size: 24px;
+}
+
+#todo-list {
+    width: 80%;
+    font-size: 24px;
+}
+
+#todo * {
+    display: inline-block;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+#todo #destroy {
+	display: none;
+	transition: color 0.5s;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;    
+    background-color: transparent;
+    font-size: 24px;
+    text-align: center;
+}
+
+#todo:hover #destroy {
+    color: blue;
+    display: inline;
+}
+
+#todo #destroy:hover {
+	color: red;
+}
+
+#todo #destroy:after {
+	content: '×';
+}
